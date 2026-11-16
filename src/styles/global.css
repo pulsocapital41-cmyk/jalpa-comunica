@@ -1,0 +1,321 @@
+/* ==========================================================================
+   JALPA COMUNICA — SISTEMA DE DISEÑO REGIONAL / CIUDADANO CERCANO
+   "Suceso hecho noticia" · Jalpa de Méndez, la Chontalpa y Tabasco
+   Paleta extraída del logotipo oficial de Jalpa Comunica:
+   - Azul Marino Profundo (#000066 / #0A1138) · color primario editorial ("Comunica")
+   - Azul Eléctrico Jalpa (#0075FF / #005CE6) · acento principal de marca ("Jalpa")
+   - Azul Cielo Claro (#7DC4FF / #EBF5FF)     · secundario del globo de diálogo y superficies
+   - Alerta Roja Ciudadana (#E11D48)          · alertas de seguridad y denuncias al momento
+   ========================================================================== */
+
+:root {
+  /* Brand Colors from Jalpa Comunica Logo */
+  --color-qroo-navy: #000066;
+  --color-qroo-navy-dark: #05082B;
+  --color-qroo-cyan: #0075FF;
+  --color-qroo-cyan-dark: #0058CC;
+  --color-qroo-cyan-light: #EBF5FF;
+  --color-jalpa-sky: #7DC4FF;
+  --color-radar-alert: #E11D48;
+  --color-radar-alert-dark: #BE123C;
+  --color-qroo-slate: #475569;
+
+  /* Editorial Surfaces & Typography Colors */
+  --color-qroo-ink: #111827;
+  --color-qroo-muted: #4B5563;
+  --color-qroo-paper: #FFFFFF;
+  --color-qroo-mist: #F4F8FD;
+  --color-qroo-border: #E2E8F0;
+  --color-qroo-border-strong: #CBD5E1;
+
+  /* Typography Families — Estilo Regional / Ciudadano Cercano (Lectura Ultra Rápida Móvil) */
+  --font-display: 'Familjen Grotesk', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-serif: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Layout Tokens */
+  --container-max: 1260px;
+  --article-max: 740px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--color-qroo-ink);
+  background-color: var(--color-qroo-paper);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+/* Container Utility */
+.container-editorial {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-editorial {
+    padding-inline: 1.75rem;
+  }
+}
+
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM (FAST MOBILE CITIZEN READING)
+   ========================================================================== */
+
+.headline-hero {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.4vw, 2.65rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--color-qroo-navy);
+  margin: 0 0 0.75rem 0;
+}
+
+.headline-card {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.15rem, 1.8vw, 1.35rem);
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: var(--color-qroo-navy);
+  margin: 0 0 0.5rem 0;
+}
+
+.headline-compact {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.04rem;
+  line-height: 1.28;
+  color: var(--color-qroo-navy);
+  margin: 0 0 0.35rem 0;
+}
+
+.editorial-excerpt {
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--color-qroo-muted);
+  margin: 0 0 0.75rem 0;
+}
+
+/* Category Badges */
+.badge-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 0.71rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #ffffff;
+  background-color: var(--color-qroo-cyan);
+  padding: 0.22rem 0.6rem;
+  border-radius: 4px;
+  margin-bottom: 0.55rem;
+}
+
+.badge-category:hover {
+  background-color: var(--color-qroo-navy);
+  color: #ffffff;
+}
+
+.badge-category-solid {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: var(--color-qroo-navy);
+  color: #ffffff;
+  padding: 0.32rem 0.8rem;
+  border-left: 4px solid var(--color-qroo-cyan);
+  border-radius: 0 4px 4px 0;
+}
+
+/* Section Headers */
+.section-header-editorial {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 3px solid var(--color-qroo-cyan);
+  border-bottom: 1px solid var(--color-qroo-border);
+  padding: 0.65rem 0;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-header-editorial::before {
+  content: "";
+  position: absolute;
+  top: -3px;
+  left: 0;
+  width: 90px;
+  height: 3px;
+  background-color: var(--color-qroo-navy);
+}
+
+.section-title-editorial {
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-qroo-navy);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-link-more {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--color-qroo-cyan);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.section-link-more:hover {
+  color: var(--color-qroo-navy);
+}
+
+/* ==========================================================================
+   PERFORMANCE: BELOW-THE-FOLD DEFERRED RENDERING
+   ========================================================================== */
+.deferred-editorial-section {
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 480px;
+}
+
+/* ==========================================================================
+   ARTICLE BODY PROSE (CLEAN SANS-SERIF CITIZEN READING)
+   ========================================================================== */
+.article-prose {
+  font-family: var(--font-sans);
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-qroo-ink);
+  max-width: var(--article-max);
+  margin-inline: auto;
+}
+
+.article-prose p {
+  margin: 0 0 1.4rem 0;
+}
+
+.article-prose > p:first-of-type::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.3rem;
+  line-height: 0.88;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 2px;
+  font-weight: 700;
+  color: var(--color-qroo-cyan);
+}
+
+.article-prose h2 {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-qroo-navy);
+  margin: 2.15rem 0 0.8rem 0;
+  line-height: 1.25;
+}
+
+.article-prose h3 {
+  font-family: var(--font-display);
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--color-qroo-navy);
+  margin: 1.7rem 0 0.65rem 0;
+}
+
+.article-prose blockquote {
+  margin: 1.85rem 0;
+  padding: 1.15rem 1.45rem;
+  border-left: 4px solid var(--color-qroo-cyan);
+  background-color: var(--color-qroo-mist);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.55;
+  color: var(--color-qroo-navy);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.article-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.article-prose ul, .article-prose ol {
+  margin: 0 0 1.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.article-prose li {
+  margin-bottom: 0.5rem;
+}
+
+.article-prose img {
+  border-radius: var(--radius-sm);
+  margin: 2rem 0;
+}
+
+/* Pulse Live Indicator Animation */
+@keyframes pulse-radar {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 117, 255, 0.8);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(0, 117, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 117, 255, 0);
+  }
+}
+
+.live-pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--color-jalpa-sky);
+  animation: pulse-radar 1.8s infinite;
+}
